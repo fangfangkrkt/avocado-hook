@@ -31,6 +31,10 @@ window.makeKeyAndOrderFront(nil)
 
 DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
     NSAnimationContext.runAnimationGroup { ctx in ctx.duration = 0.3; window.animator().alphaValue = 1 }
+    if let sound = NSSound(contentsOfFile: "/System/Library/Sounds/Purr.aiff", byReference: false) {
+        sound.volume = 1.0
+        sound.play()
+    }
 }
 
 DispatchQueue.main.asyncAfter(deadline: .now() + 6.0) {

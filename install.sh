@@ -102,7 +102,6 @@ new_hook = {
         "osascript "
         "-e 'display notification \"Claude has finished\" with title \"Claude Code\"' "
         "-e 'tell application \"Claude\" to activate'; "
-        f"afplay /System/Library/Sounds/Purr.aiff -v 3 & "
         f"open {shlex.quote(app_path)} &"
     ),
     "timeout": 5
