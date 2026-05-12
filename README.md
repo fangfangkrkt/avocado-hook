@@ -25,7 +25,7 @@ A popup will appear — click **Install**. Takes a few minutes. Skip this if you
 
 ### Step 2 — Clone this repo
 ```bash
-git clone https://github.com/YOUR_USERNAME/avo-hook.git
+git clone https://github.com/fangfangkrkt/avo-hook.git
 cd avo-hook
 ```
 
