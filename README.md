@@ -2,8 +2,6 @@
 
 Make kawaii avocados rain down your screen every time Claude finishes a task.
 
-![avocado confetti demo](demo.gif)
-
 ---
 
 ## Requirements
