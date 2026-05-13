@@ -102,7 +102,7 @@ new_hook = {
         "osascript "
         "-e 'display notification \"Claude has finished\" with title \"Claude Code\" sound name \"Pop\"' "
         "-e 'tell application \"Claude\" to activate'; "
-        f"open {shlex.quote(app_path)} &"
+        f"(sleep 1.5; open {shlex.quote(app_path)}) &"
     ),
     "timeout": 5
 }
