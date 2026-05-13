@@ -100,7 +100,7 @@ new_hook = {
     "type": "command",
     "command": (
         "osascript "
-        "-e 'display notification \"Claude has finished\" with title \"Claude Code\"' "
+        "-e 'display notification \"Claude has finished\" with title \"Claude Code\" sound name \"Pop\"' "
         "-e 'tell application \"Claude\" to activate'; "
         f"open {shlex.quote(app_path)} &"
     ),
