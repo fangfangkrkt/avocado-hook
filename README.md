@@ -28,13 +28,13 @@ Make kawaii avocados rain down every time Claude finishes a task — as a native
 
 ### 🪟 Windows
 
+> **Note:** The avocados open in a browser tab rather than floating over your screen like on Mac. The experience is slightly different but the avocados are just as kawaii 🥑
+
 1. [Download ZIP](https://github.com/fangfangkrkt/avocado-hook/archive/refs/heads/main.zip) and unzip
 2. Double-click `install-windows.bat`
 3. Restart Claude Code — done! 🥑
 
 > **Windows blocked it?** Click **More info** → **Run anyway** to bypass the SmartScreen warning.
-
-> **Note for Windows users:** The avocados open in a browser tab rather than floating over your screen like on Mac. This is a browser tab you can close when done — the experience is slightly different but the avocados are just as kawaii 🥑
 
 ---
 
