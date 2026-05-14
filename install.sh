@@ -9,7 +9,7 @@ echo "  • Compile a Swift animation app to ~/.claude/avocado-hook/"
 echo "  • Add a Stop hook to ~/.claude/settings.json"
 echo "  • Back up your settings.json before modifying it"
 echo ""
-echo "Review the source at https://github.com/YOUR_USERNAME/avo-hook before continuing."
+echo "Review the source at https://github.com/fangfangkrkt/avocado-hook before continuing."
 echo ""
 read -r -p "Continue? (y/n) " REPLY
 echo ""
