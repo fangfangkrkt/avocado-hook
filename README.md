@@ -7,53 +7,42 @@ Make kawaii avocados rain down your screen every time Claude finishes a task.
 ## Requirements
 
 - [Claude Code](https://claude.ai/code) installed
-- **Mac:** macOS 12 or later + Xcode Command Line Tools (free — see step 1 below)
+- **Mac:** macOS 12 or later + Xcode Command Line Tools (free — see note below)
 - **Windows:** PowerShell (built into Windows 10/11)
 
 ---
 
 ## Install (3 steps)
 
-### Step 1 — Install Xcode Command Line Tools
-Open **Terminal** and run:
-```bash
-xcode-select --install
-```
-A popup will appear — click **Install**. Takes a few minutes. Skip this if you've done it before.
+### 🍎 Mac
 
-### Step 2 — Clone this repo
-```bash
-git clone https://github.com/fangfangkrkt/avo-hook.git
-cd avo-hook
-```
+1. [Download ZIP](https://github.com/fangfangkrkt/avocado-hook/archive/refs/heads/main.zip) and unzip
+2. Double-click `install.command`
+3. Restart Claude Code — done! 🥑
 
-### Step 3 — Run the installer
-```bash
-chmod +x install.sh
-./install.sh
-```
+> **macOS blocked it?** Right-click `install.command` → **Open** → **Open** to bypass the warning the first time.
 
-The script will ask for confirmation, compile the animation, and add the hook. That's it 🥑
+> **No Xcode tools yet?** Open Terminal and run `xcode-select --install`, then try again.
 
 ---
 
-## If macOS blocks the app
+### 🪟 Windows
 
-On first run, macOS might show *"cannot be opened because the developer cannot be verified."*
-The installer handles this automatically. If you ever see it anyway, run:
-```bash
-xattr -dr com.apple.quarantine ~/.claude/avocado-hook/Fireworks.app
-```
-Then try again.
+1. [Download ZIP](https://github.com/fangfangkrkt/avocado-hook/archive/refs/heads/main.zip) and unzip
+2. Double-click `install-windows.bat`
+3. Restart Claude Code — done! 🎆
 
 ---
 
 ## Uninstall
 
+**Mac:**
 ```bash
 rm -rf ~/.claude/avocado-hook
 ```
 Then open `~/.claude/settings.json` and remove the `avocado-hook` line. Your backup is at `settings.json.bak`.
+
+**Windows:** Delete `%USERPROFILE%\.claude\avocado-hook\`, then open `%USERPROFILE%\.claude\settings.json` and remove the `avocado-hook` line.
 
 ---
 
@@ -61,51 +50,20 @@ Then open `~/.claude/settings.json` and remove the `avocado-hook` line. Your bac
 
 Before running any script from the internet, you should know exactly what it touches:
 
+**Mac:**
 1. Compiles `fireworks.swift` into a local `.app` using your own `swiftc` — **no pre-built binary downloaded**
 2. Copies `avocado.html` to `~/.claude/avocado-hook/`
-3. **Backs up** `~/.claude/settings.json` to `settings.json.bak`
-4. Adds one `Stop` hook to `settings.json` that runs `osascript` (notification), `afplay` (sound), and `open` (the animation)
-5. Asks for your **confirmation** before making any changes
+3. Backs up `~/.claude/settings.json` to `settings.json.bak`
+4. Adds one `Stop` hook to `settings.json`
+5. Asks for your confirmation before making any changes
 
-The animation has no network access and no external dependencies — pure SVG/CSS in a sandboxed WebKit view.
+**Windows:**
+1. Saves a small PowerShell script to `~\.claude\avocado-hook\`
+2. Backs up `settings.json` to `settings.json.bak`
+3. Adds one `Stop` hook to `settings.json`
 
 ---
 
 ## How it works
 
 Claude Code supports [hooks](https://docs.anthropic.com/en/docs/claude-code/hooks) — shell commands that fire at specific moments. This adds a `Stop` hook that triggers every time Claude finishes responding.
-
----
-
-## 🪟 Windows Users
-
-No installer yet, but you can set it up manually in 3 steps.
-
-**Step 1 — Save this as `avocado-hook.ps1`** anywhere (e.g. `C:\avocado-hook\avocado-hook.ps1`):
-
-```powershell
-Add-Type -AssemblyName System.Windows.Forms
-[System.Windows.Forms.MessageBox]::Show("Claude has finished!", "Claude Code")
-Start-Process "https://fangfangkrkt.github.io/avocado-hook/fireworks.html"
-```
-
-**Step 2 — Add the hook to Claude Code settings**
-
-Open `%APPDATA%\Claude\settings.json` and add this inside the `"hooks"` section:
-
-```json
-"Stop": [
-  {
-    "matcher": "",
-    "hooks": [
-      {
-        "type": "command",
-        "command": "powershell -File C:\\avocado-hook\\avocado-hook.ps1",
-        "timeout": 5
-      }
-    ]
-  }
-]
-```
-
-**Step 3 — Restart Claude Code.** Done! 🎆
