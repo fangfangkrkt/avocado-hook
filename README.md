@@ -34,6 +34,8 @@ Make kawaii avocados rain down every time Claude finishes a task — as a native
 
 > **Windows blocked it?** Click **More info** → **Run anyway** to bypass the SmartScreen warning.
 
+> **Note for Windows users:** The avocados open in a browser tab rather than floating over your screen like on Mac. This is a browser tab you can close when done — the experience is slightly different but the avocados are just as kawaii 🥑
+
 ---
 
 ## Uninstall
