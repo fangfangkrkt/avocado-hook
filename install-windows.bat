@@ -39,7 +39,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -Command ^
    if (Test-Path $sp) { Copy-Item $sp \"$sp.bak\"; $s = Get-Content $sp -Raw | ConvertFrom-Json } ^
    else { $s = [PSCustomObject]@{} }; ^
    if (-not $s.hooks) { $s | Add-Member -NotePropertyName hooks -NotePropertyValue ([PSCustomObject]@{}) }; ^
-   $cmd = \"powershell -WindowStyle Hidden -File \`\"$hook\`\"\"; ^
+   $cmd = \"powershell -WindowStyle Hidden -ExecutionPolicy Bypass -File \`\"$hook\`\"\"; ^
    $entry = [PSCustomObject]@{ matcher = ''; hooks = @(@{ type = 'command'; command = $cmd; timeout = 5 }) }; ^
    if (-not $s.hooks.Stop) { $s.hooks | Add-Member -NotePropertyName Stop -NotePropertyValue @($entry) } ^
    else { $already = $s.hooks.Stop | ForEach-Object { $_.hooks } | Where-Object { $_.command -like '*avocado-hook*' }; ^
