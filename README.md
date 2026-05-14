@@ -60,9 +60,10 @@ Before running any script from the internet, you should know exactly what it tou
 5. Asks for your confirmation before making any changes
 
 **Windows:**
-1. Saves a small PowerShell script to `~\.claude\avocado-hook\`
-2. Backs up `settings.json` to `settings.json.bak`
-3. Adds one `Stop` hook to `settings.json`
+1. Asks for your confirmation before making any changes
+2. Saves a small PowerShell script to `~\.claude\avocado-hook\`
+3. Backs up `settings.json` to `settings.json.bak`
+4. Adds one `Stop` hook to `settings.json`
 
 ---
 
