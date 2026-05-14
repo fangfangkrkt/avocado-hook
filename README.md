@@ -75,4 +75,37 @@ The animation has no network access and no external dependencies — pure SVG/CS
 
 Claude Code supports [hooks](https://docs.anthropic.com/en/docs/claude-code/hooks) — shell commands that fire at specific moments. This adds a `Stop` hook that triggers every time Claude finishes responding.
 
-macOS only. No Windows support planned.
+---
+
+## 🪟 Windows Users
+
+No installer yet, but you can set it up manually in 3 steps.
+
+**Step 1 — Save this as `avocado-hook.ps1`** anywhere (e.g. `C:\avocado-hook\avocado-hook.ps1`):
+
+```powershell
+Add-Type -AssemblyName System.Windows.Forms
+[System.Windows.Forms.MessageBox]::Show("Claude has finished!", "Claude Code")
+Start-Process "https://fangfangkrkt.github.io/avocado-hook/fireworks.html"
+```
+
+**Step 2 — Add the hook to Claude Code settings**
+
+Open `%APPDATA%\Claude\settings.json` and add this inside the `"hooks"` section:
+
+```json
+"Stop": [
+  {
+    "matcher": "",
+    "hooks": [
+      {
+        "type": "command",
+        "command": "powershell -File C:\\avocado-hook\\avocado-hook.ps1",
+        "timeout": 5
+      }
+    ]
+  }
+]
+```
+
+**Step 3 — Restart Claude Code.** Done! 🎆
