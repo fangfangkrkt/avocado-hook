@@ -1,6 +1,6 @@
 # 🥑 Avocado Hook for Claude Code
 
-Make kawaii avocados rain down your screen every time Claude finishes a task.
+Make kawaii avocados rain down every time Claude finishes a task — as a native overlay on Mac, and in a browser tab on Windows.
 
 ---
 
@@ -30,7 +30,7 @@ Make kawaii avocados rain down your screen every time Claude finishes a task.
 
 1. [Download ZIP](https://github.com/fangfangkrkt/avocado-hook/archive/refs/heads/main.zip) and unzip
 2. Double-click `install-windows.bat`
-3. Restart Claude Code — done! 🎆
+3. Restart Claude Code — done! 🥑
 
 > **Windows blocked it?** Click **More info** → **Run anyway** to bypass the SmartScreen warning.
 

@@ -62,7 +62,7 @@
     <h1>Claude has finished!</h1>
     <p>Go check your results.</p>
   </div>
-  <div class="close-hint" id="hint">Press any key or click to close</div>
+  <div class="close-hint" id="hint">Done — close this tab to continue</div>
   <script>
     function avoSVG(size) {
       const s = size;
@@ -108,8 +108,6 @@
     setInterval(dropWave, 3000);
 
     setTimeout(() => document.getElementById('hint').classList.add('visible'), 4000);
-    document.addEventListener('keydown', () => window.close());
-    document.addEventListener('click', () => window.close());
   </script>
 </body>
 </html>
