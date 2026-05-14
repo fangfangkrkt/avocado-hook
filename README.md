@@ -32,6 +32,8 @@ Make kawaii avocados rain down your screen every time Claude finishes a task.
 2. Double-click `install-windows.bat`
 3. Restart Claude Code — done! 🎆
 
+> **Windows blocked it?** Click **More info** → **Run anyway** to bypass the SmartScreen warning.
+
 ---
 
 ## Uninstall
