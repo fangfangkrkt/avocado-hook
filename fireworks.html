@@ -28,6 +28,19 @@
     .msg .emoji { font-size: 4rem; display: block; margin-bottom: 0.5rem; }
     .msg h1 { font-size: 1.8rem; font-weight: 700; letter-spacing: -0.02em; }
     .msg p { margin-top: 0.4rem; font-size: 1rem; opacity: 0.6; }
+    .close-hint {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 20;
+      color: rgba(255,255,255,0.35);
+      font-size: 0.85rem;
+      opacity: 0;
+      transition: opacity 1s ease;
+      pointer-events: none;
+    }
+    .close-hint.visible { opacity: 1; }
     @keyframes pop {
       from { transform: scale(0.5); opacity: 0; }
       to   { transform: scale(1);   opacity: 1; }
@@ -41,6 +54,7 @@
     <h1>Claude has finished!</h1>
     <p>Go check your results.</p>
   </div>
+  <div class="close-hint" id="hint">Press any key or click to close</div>
   <script>
     const canvas = document.getElementById('c');
     const ctx = canvas.getContext('2d');
@@ -131,7 +145,10 @@
     }
     loop();
 
-    setTimeout(() => window.close(), 8000);
+    // Show close hint after 4s (window.close() won't work when opened externally)
+    setTimeout(() => document.getElementById('hint').classList.add('visible'), 4000);
+    document.addEventListener('keydown', () => window.close());
+    document.addEventListener('click', () => window.close());
   </script>
 </body>
 </html>
