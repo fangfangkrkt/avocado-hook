@@ -6,9 +6,9 @@ Make kawaii avocados rain down your screen every time Claude finishes a task.
 
 ## Requirements
 
-- Mac (macOS 12 or later)
 - [Claude Code](https://claude.ai/code) installed
-- Xcode Command Line Tools (free — see step 1 below)
+- **Mac:** macOS 12 or later + Xcode Command Line Tools (free — see step 1 below)
+- **Windows:** PowerShell (built into Windows 10/11)
 
 ---
 
